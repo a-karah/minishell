@@ -6,7 +6,7 @@
 /*   By: ysay <ysay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 11:47:34 by ysay              #+#    #+#             */
-/*   Updated: 2022/01/03 18:05:59 by ysay             ###   ########.fr       */
+/*   Updated: 2022/04/30 15:10:48 by akarahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static	char	*init_s(char **s, char c)
 }
 
 char	**ft_split(char const *s, char c)
-{	
+{
 	char	**ch;
 	size_t	i;
 	size_t	k;
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = word_size((char *)s, c);
-	ch = (char **)malloc(i * sizeof(char *) + 1);
+	ch = (char **)malloc((i + 1) * sizeof(char *));
 	if (!ch)
 		return (NULL);
 	while (k < i)
