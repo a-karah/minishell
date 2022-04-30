@@ -9,22 +9,30 @@ ft_strcmp.c ft_isspace.c
 
 _OBJ = $(_SRC:.c=.o)
 
-
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 INC = $(IDIR)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all debug clean fclean re dre
+
 all: $(NAME)
+
+debug: FLAGS += -fsanitize=address -g
+debug: $(NAME)
 
 $(NAME): $(_OBJ)
 	ar -rcs $@ $^
+
 %.o: %.c
 	$(CC)  $(FLAGS) -c $< -o $@
-clean : 
+
+clean :
 	rm -f $(_OBJ)
+
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+dre: fclean debug
