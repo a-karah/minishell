@@ -18,7 +18,7 @@ INC = $(IDIR)
 
 all: $(NAME)
 
-debug: FLAGS += -fsanitize=address -g
+debug: FLAGS += -fsanitize=address -g3
 debug: $(NAME)
 
 $(NAME): $(_OBJ)

@@ -6,7 +6,7 @@
 #    By: akarahan <akarahan@student.42istanbul.com. +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/10 15:44:43 by ysay              #+#    #+#              #
-#    Updated: 2022/04/30 11:48:47 by akarahan         ###   ########.fr        #
+#    Updated: 2022/04/30 15:06:02 by akarahan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ DFLAG =
 
 all: $(EXLIB) $(NAME)
 
-debug: FLAGS += -fsanitize=address -g
+debug: FLAGS += -fsanitize=address -g3
 debug: DFLAG += debug
 debug: $(EXLIB) $(NAME)
 
